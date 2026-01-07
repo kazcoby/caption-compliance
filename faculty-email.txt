@@ -1,0 +1,77 @@
+SUBJECT: Action Required: New Federal Live Captioning Requirements
+
+Dear Colleagues,
+
+═══════════════════════════════════════════════════════════════
+    COMPLIANCE DEADLINE: April 24, 2026
+    New federal ADA regulations require live captions
+    for all synchronous online instruction
+═══════════════════════════════════════════════════════════════
+
+Starting Spring 2026, ALL faculty teaching live online courses must enable real-time captioning. This is no longer optional or provided only upon request—it's a legal requirement under the Americans with Disabilities Act (ADA) Title II.
+
+
+WHAT YOU NEED TO KNOW
+─────────────────────
+
+• Proactive, Not Reactive: Captions must be available for ALL live sessions, regardless of whether any student has requested accommodations
+
+• Speaker Identification Required: Captions must make clear who is speaking, especially in discussions
+
+• Applies to All Live Content: Every synchronous Zoom session in your online or hybrid courses
+
+
+IMMEDIATE ACTIONS YOU CAN TAKE THIS WEEK
+────────────────────────────────────────
+
+1. Turn on Zoom auto-captions — Click "Live Transcript" → "Enable Auto-Transcription"
+
+2. Update your Zoom display name — Include your role (e.g., "Dr. Smith - Instructor")
+
+3. Use student names — When calling on students, say their names clearly
+
+4. Repeat questions — "Thanks Sarah, you're asking about the deadline..."
+
+
+COMPLETE TRAINING GUIDE
+───────────────────────
+
+We've created a comprehensive guide with step-by-step instructions, best practices, FAQs, and an interactive checklist:
+
+→ https://kazcoby.github.io/caption-compliance/
+
+
+WHY THIS MATTERS
+────────────────
+
+Beyond legal compliance, captions benefit ALL students. Research shows:
+
+• 98.6% of students who use captions say they're helpful
+• 75% use captions as a learning aid
+• 52% report improved comprehension
+
+Captions help deaf/hard of hearing students, ESL learners, students in noisy environments, and those who learn better with text reinforcement.
+
+
+SUPPORT AVAILABLE
+─────────────────
+
+For Spring 2026, the college is providing enhanced captioning services through the California DECT Grant, which covers live captioning for courses that need additional support beyond Zoom's auto-captions.
+
+
+QUESTIONS? CONTACT
+──────────────────
+
+Accessibility Questions:
+Scott McAfee, Access Coordinator
+scott.mcafee@canyons.edu | (818) 362-3356
+
+Instructional Design & Best Practices:
+Online Education
+online@canyons.edu | 661-362-3600
+
+
+Thank you for your commitment to accessible, equitable education for all COC students.
+
+Online Education Department
+College of the Canyons
