@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Education 2026: The Year of Intentional Innovation | COC</title>
+    <style>
+        :root {
+            --navy: #003366;
+            --navy-dark: #001a33;
+            --gold: #FFB81C;
+            --gold-light: #FFD700;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --green: #10b981;
+            --green-light: rgba(16, 185, 129, 0.1);
+            --yellow: #f59e0b;
+            --yellow-light: rgba(245, 158, 11, 0.1);
+            --red: #ef4444;
+            --red-light: rgba(239, 68, 68, 0.1);
+            --purple: #8b5cf6;
+            --pink: #ff0080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--navy);
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            gap: 5px;
+            padding: 10px 0;
+            scrollbar-width: none;
+        }
+
+        .nav-container::-webkit-scrollbar { display: none; }
+
+        nav a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: var(--gold);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, #004080 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,184,28,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .hero h1 span { color: var(--gold); }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        section .section-subtitle {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* Cards Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .card p { color: var(--gray-600); }
+
+        .card .tag {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--navy);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* Feature Card */
+        .feature-card {
+            border-left: 4px solid var(--gold);
+            background: linear-gradient(135deg, rgba(255,184,28,0.05), white);
+        }
+
+        /* California Section */
+        #california { background: var(--gray-100); }
+
+        .ca-highlight {
+            background: linear-gradient(135deg, var(--navy), #004080);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .ca-highlight h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .partner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .partner-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Moonshots Section */
+        #moonshots {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a0033 50%, #0f0f1e 100%);
+            max-width: none;
+            color: #e0e0e0;
+        }
+
+        #moonshots h2 {
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            background: linear-gradient(120deg, #ff0080, #ff6b00, #ffb700, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #moonshots .section-subtitle {
+            text-align: center;
+            color: #ff0080;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .moonshot-card {
+            background: linear-gradient(135deg, rgba(255,0,127,0.1), rgba(255,107,0,0.1));
+            border: 2px solid rgba(255,0,127,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .moonshot-card:hover {
+            border-color: rgba(255,0,127,0.8);
+            box-shadow: 0 0 30px rgba(255,0,127,0.4);
+        }
+
+        .moonshot-card h3 { color: #ff0080; }
+        .moonshot-card p { color: #d0d0e0; }
+
+        .moonshot-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Tech Cards */
+        .tech-card {
+            background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,136,255,0.1));
+            border: 2px solid rgba(0,255,136,0.3);
+        }
+
+        .tech-card:hover {
+            border-color: rgba(0,255,136,0.8);
+            box-shadow: 0 0 25px rgba(0,255,136,0.3);
+        }
+
+        .tech-card h3 { color: #00ff88; }
+
+        /* Pedagogy Section */
+        .pedagogy-section {
+            margin-top: 60px;
+            background: linear-gradient(135deg, rgba(255,107,0,0.05), rgba(255,0,127,0.05));
+            border: 2px solid rgba(255,107,0,0.2);
+            border-radius: 16px;
+            padding: 50px;
+        }
+
+        .pedagogy-section h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .pedagogy-card {
+            background: linear-gradient(135deg, rgba(255,183,0,0.1), rgba(255,0,127,0.1));
+            border-left: 4px solid #ffb700;
+        }
+
+        .pedagogy-card h3 { color: #ffb700; }
+
+        .pedagogy-credit {
+            font-size: 0.85rem;
+            color: #b0b0cc;
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,183,0,0.3);
+        }
+
+        /* Traffic Light Section */
+        #emerging-tech { background: var(--gray-100); }
+
+        .traffic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .traffic-section {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .traffic-header {
+            padding: 20px 25px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .traffic-light {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .green .traffic-header { background: linear-gradient(135deg, #10b981, #059669); }
+        .green .traffic-light { background: #10b981; box-shadow: 0 0 10px rgba(16,185,129,0.5); }
+
+        .yellow .traffic-header { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .yellow .traffic-light { background: #f59e0b; box-shadow: 0 0 10px rgba(245,158,11,0.5); }
+
+        .red .traffic-header { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .red .traffic-light { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+
+        .traffic-content {
+            background: white;
+            padding: 25px;
+        }
+
+        .traffic-item {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .traffic-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .traffic-item h4 {
+            font-size: 1.05rem;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
+
+        .traffic-item p { font-size: 0.9rem; color: var(--gray-600); }
+
+        .stat-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+            margin-right: 5px;
+        }
+
+        .stat-badge.green { background: var(--green-light); color: #059669; }
+        .stat-badge.yellow { background: var(--yellow-light); color: #b45309; }
+        .stat-badge.red { background: var(--red-light); color: #991b1b; }
+
+        /* Budget Section */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .budget-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .budget-header {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .budget-header h3 { font-size: 1.3rem; margin-bottom: 5px; }
+        .budget-header .price { font-size: 2rem; font-weight: 800; }
+
+        .free .budget-header { background: linear-gradient(135deg, #10b981, #059669); }
+        .starter .budget-header { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .growth .budget-header { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .enterprise .budget-header { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+        .budget-content {
+            background: white;
+            padding: 25px;
+        }
+
+        .budget-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .budget-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .budget-content li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        /* Measurement Section */
+        .kirkpatrick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .level-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .level-1 { border-left: 4px solid #ff6b6b; }
+        .level-2 { border-left: 4px solid #ffa500; }
+        .level-3 { border-left: 4px solid #4ecdc4; }
+        .level-4 { border-left: 4px solid #2ecc71; }
+
+        .level-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--navy);
+            min-width: 50px;
+        }
+
+        .level-content h4 { color: var(--navy); margin-bottom: 5px; }
+
+        .okr-card {
+            background: linear-gradient(135deg, rgba(59,130,246,0.05), white);
+            border-left: 4px solid #3b82f6;
+        }
+
+        .kr-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .kr-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--gray-50);
+            border-radius: 8px;
+        }
+
+        .kr-metric {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .kr-label { font-size: 0.85rem; color: var(--gray-600); }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .impact-metric {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .impact-label {
+            font-weight: 600;
+            color: var(--navy);
+            margin: 10px 0;
+        }
+
+        /* Quick Wins */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .timeline-card {
+            border-top: 4px solid var(--gold);
+        }
+
+        .timeline-card h3 { margin-bottom: 20px; }
+
+        .timeline-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .timeline-card li::before {
+            content: "→";
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        th {
+            background: var(--navy);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        tr:hover { background: var(--gray-50); }
+
+        /* Key Insight Box */
+        .key-insight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: white;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .source-category h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .source-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .source-category li {
+            padding: 5px 0;
+        }
+
+        .source-category a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .source-category a:hover { color: var(--gold); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; }
+            .stats-bar { gap: 20px; }
+            .stat-item { padding: 15px 20px; }
+            .stat-number { font-size: 2rem; }
+            section { padding: 50px 20px; }
+            .kirkpatrick-grid { grid-template-columns: 1fr; }
+            .kr-grid { grid-template-columns: 1fr; }
+            .traffic-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+
+        /* ========== INTERACTIVE ELEMENTS ========== */
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .fab {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--navy);
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .fab.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fab:hover {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+
+        #darkModeToggle { opacity: 1; transform: translateY(0); }
+
+        /* Search Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 100px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .search-container {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            font-size: 1.2rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        #searchInput:focus { border-color: var(--gold); }
+
+        .search-close {
+            position: absolute;
+            right: 35px;
+            top: 35px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-600);
+        }
+
+        .search-results {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .search-result-item {
+            padding: 15px;
+            border-bottom: 1px solid var(--gray-100);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover { background: var(--gray-50); }
+
+        .search-result-item h4 { color: var(--navy); margin-bottom: 5px; }
+        .search-result-item p { color: var(--gray-600); font-size: 0.9rem; }
+        .search-result-item .section-tag {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--navy);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-top: 5px;
+        }
+
+        /* Bookmarks Panel */
+        .bookmarks-panel {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            z-index: 2000;
+            transition: right 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmarks-panel.active { right: 0; }
+
+        .bookmarks-header {
+            padding: 20px;
+            background: var(--navy);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bookmarks-header h3 { margin: 0; }
+
+        .bookmarks-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .bookmarks-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .bookmarks-empty {
+            color: var(--gray-600);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .bookmark-item {
+            background: var(--gray-50);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .bookmark-item h4 { color: var(--navy); margin-bottom: 5px; font-size: 1rem; }
+        .bookmark-item p { color: var(--gray-600); font-size: 0.85rem; }
+
+        .bookmark-remove {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: var(--red);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .bookmarks-export {
+            margin: 20px;
+            padding: 15px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .bookmarks-export:hover { background: var(--gold-light); }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--navy);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Card Bookmark Button */
+        .card-bookmark {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+
+        .card:hover .card-bookmark { opacity: 1; }
+        .card-bookmark:hover { background: var(--gold); transform: scale(1.1); }
+        .card-bookmark.saved { opacity: 1; background: var(--gold); }
+
+        .card { position: relative; }
+
+        /* Active Nav Link */
+        nav a.active {
+            background: rgba(255,255,255,0.15);
+            color: var(--gold);
+        }
+
+        /* Checklist for Quick Wins */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .checklist-item:hover { background: var(--gray-50); margin: 0 -15px; padding: 12px 15px; }
+
+        .checklist-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gold);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .checklist-item.completed .checklist-checkbox {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .checklist-item.completed .checklist-checkbox::after {
+            content: "✓";
+            color: white;
+            font-weight: bold;
+        }
+
+        .checklist-item.completed .checklist-text {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .checklist-text { flex: 1; }
+
+        /* Progress Counter */
+        .progress-counter {
+            background: var(--gray-100);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .progress-ring {
+            width: 60px;
+            height: 60px;
+        }
+
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.5s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        .progress-text {
+            flex: 1;
+        }
+
+        .progress-text strong { color: var(--navy); font-size: 1.2rem; }
+        .progress-text span { color: var(--gray-600); font-size: 0.9rem; display: block; }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background: #1a1a2e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode nav { background: #0f0f1e; }
+        body.dark-mode .card { background: #252542; border-color: #3a3a5c; }
+        body.dark-mode .card h3 { color: var(--gold); }
+        body.dark-mode .card p { color: #b0b0c0; }
+        body.dark-mode section h2 { color: var(--gold); }
+        body.dark-mode section .section-subtitle { color: #a0a0b0; }
+        body.dark-mode table { background: #252542; }
+        body.dark-mode th { background: #0f0f1e; }
+        body.dark-mode td { border-color: #3a3a5c; color: #d0d0e0; }
+        body.dark-mode tr:hover { background: #2a2a4a; }
+        body.dark-mode #california { background: #151528; }
+        body.dark-mode #emerging-tech { background: #151528; }
+        body.dark-mode .traffic-content { background: #252542; }
+        body.dark-mode .traffic-item { border-color: #3a3a5c; }
+        body.dark-mode .traffic-item h4 { color: #e0e0e0; }
+        body.dark-mode .traffic-item p { color: #a0a0b0; }
+        body.dark-mode .budget-content { background: #252542; }
+        body.dark-mode .budget-content li { border-color: #3a3a5c; color: #d0d0e0; }
+        body.dark-mode .search-container { background: #252542; }
+        body.dark-mode #searchInput { background: #1a1a2e; border-color: #3a3a5c; color: #e0e0e0; }
+        body.dark-mode .search-result-item:hover { background: #1a1a2e; }
+        body.dark-mode .bookmarks-panel { background: #252542; }
+        body.dark-mode .bookmark-item { background: #1a1a2e; }
+
+        /* Animated Stats */
+        .stat-number { display: inline-block; }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-number.animate { animation: countUp 0.6s ease-out; }
+
+        /* Copy Button on Cards */
+        .card-copy {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: var(--gray-100);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+
+        .card:hover .card-copy { opacity: 1; }
+        .card-copy:hover { background: var(--gold); }
+
+        /* Search Results */
+        .search-hint, .search-no-results {
+            color: var(--gray-500);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .search-result {
+            padding: 15px;
+            border-bottom: 1px solid var(--gray-200);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result:hover {
+            background: var(--gray-100);
+        }
+
+        .search-result-section {
+            font-size: 0.8rem;
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .search-result-text {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Bookmark Items */
+        .bookmark-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid var(--gray-200);
+            gap: 10px;
+        }
+
+        .bookmark-title {
+            flex: 1;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .bookmark-section {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            background: var(--gray-100);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .bookmark-remove {
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .bookmark-remove:hover {
+            color: var(--coral);
+        }
+
+        /* Checklist Progress */
+        .checklist-progress {
+            text-align: center;
+            padding: 15px;
+            font-size: 1rem;
+            color: var(--gray-600);
+            margin-bottom: 20px;
+        }
+
+        .progress-count {
+            font-weight: 700;
+            color: var(--green);
+            font-size: 1.2rem;
+        }
+
+        /* Keyboard hints */
+        kbd {
+            background: var(--gray-200);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            margin-right: 2px;
+        }
+
+        /* Dark mode adjustments for new elements */
+        body.dark-mode .search-result:hover {
+            background: #2a2a4a;
+        }
+
+        body.dark-mode .search-result-section {
+            color: var(--gold);
+        }
+
+        body.dark-mode .bookmark-item {
+            border-color: #3a3a5a;
+        }
+
+        body.dark-mode .bookmark-section {
+            background: #2a2a4a;
+            color: #aaa;
+        }
+
+        body.dark-mode kbd {
+            background: #3a3a5a;
+        }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--gold);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 12px 20px;
+            position: sticky;
+            top: 52px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .filter-btn {
+            padding: 6px 14px;
+            border: 1px solid var(--gray-200);
+            background: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+
+        .filter-btn.active {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        .filter-btn .count {
+            background: var(--gray-100);
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+        }
+
+        .filter-btn.active .count {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Card Categories */
+        .card[data-category] {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .card.filtered-out {
+            display: none;
+        }
+
+        /* Search Highlight */
+        mark.search-highlight {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1px 3px;
+            border-radius: 2px;
+        }
+
+        /* Section Deep Link Icon */
+        .section-link {
+            opacity: 0;
+            margin-left: 10px;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.8em;
+            transition: opacity 0.2s;
+        }
+
+        h2:hover .section-link,
+        .section-link:focus {
+            opacity: 1;
+        }
+
+        .section-link:hover {
+            color: var(--navy);
+        }
+
+        /* Share Toast */
+        .share-toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--navy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 9999;
+        }
+
+        .share-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Dark mode filter bar */
+        body.dark-mode .filter-bar {
+            background: #1a1a2e;
+            border-color: #3a3a5a;
+        }
+
+        body.dark-mode .filter-btn {
+            background: #2a2a4a;
+            border-color: #3a3a5a;
+            color: #ccc;
+        }
+
+        body.dark-mode .filter-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        body.dark-mode .filter-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Print Styles */
+        @media print {
+            /* Hide interactive elements */
+            nav, .fab-container, .search-overlay, .bookmarks-panel,
+            .toast, .filter-bar, .skip-link, .card-bookmark, .card-copy,
+            .section-link, .progress-bar, .share-toast {
+                display: none !important;
+            }
+
+            /* Reset colors for print */
+            body, body.dark-mode {
+                background: white !important;
+                color: black !important;
+            }
+
+            .hero {
+                background: var(--navy) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Page breaks */
+            section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            .card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+
+            /* Expand all content */
+            .card-grid, .grid {
+                display: block !important;
+            }
+
+            .card {
+                margin-bottom: 15px !important;
+                width: 100% !important;
+            }
+
+            /* Show URLs for links */
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+                color: #666;
+                word-break: break-all;
+            }
+
+            /* Footer */
+            footer {
+                page-break-before: always;
+            }
+
+            /* Header on each page */
+            @page {
+                margin: 0.75in;
+                @top-center {
+                    content: "Online Education 2026 - College of the Canyons";
+                }
+            }
+        }
+
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container" role="group" aria-label="Page tools">
+        <button class="fab" id="darkModeToggle" title="Toggle Dark Mode" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+        <button class="fab" id="backToTop" title="Back to Top" aria-label="Scroll to top of page">↑</button>
+        <button class="fab" id="bookmarksToggle" title="View Saved Ideas" aria-label="Open bookmarks panel" aria-expanded="false">⭐</button>
+    </div>
+
+    <!-- Share Toast -->
+    <div class="share-toast" id="shareToast" role="alert" aria-live="polite"></div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search document">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search ideas, concepts, tools..." autofocus aria-label="Search input" role="searchbox">
+            <button class="search-close" id="searchClose" aria-label="Close search">×</button>
+            <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+    </div>
+
+    <!-- Bookmarks Panel -->
+    <div class="bookmarks-panel" id="bookmarksPanel" role="complementary" aria-label="Saved bookmarks">
+        <div class="bookmarks-header">
+            <h3>⭐ Saved Ideas</h3>
+            <button class="bookmarks-close" id="bookmarksClose" aria-label="Close bookmarks panel">×</button>
+        </div>
+        <div class="bookmarks-content" id="bookmarksContent" role="list">
+            <p class="bookmarks-empty">Click the ⭐ on any card to save it here!</p>
+        </div>
+        <button class="bookmarks-export" id="bookmarksExport" aria-label="Copy all bookmarks to clipboard">📋 Copy All to Clipboard</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Document sections">
+        <div class="nav-container">
+            <a href="#landscape">Landscape</a>
+            <a href="#california">California CC</a>
+            <a href="#retreat">Retreat</a>
+            <a href="#communications">Communications</a>
+            <a href="#video">Video</a>
+            <a href="#faculty-dev">Faculty Dev</a>
+            <a href="#moonshots">Moonshots</a>
+            <a href="#emerging-tech">Emerging Tech</a>
+            <a href="#measurement">Measurement</a>
+            <a href="#budget">Budget</a>
+            <a href="#quick-wins">Quick Wins</a>
+        </div>
+    </nav>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="toolbar" aria-label="Filter cards by category">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="strategy" aria-pressed="false">🎯 Strategy</button>
+        <button class="filter-btn" data-filter="technology" aria-pressed="false">💻 Technology</button>
+        <button class="filter-btn" data-filter="faculty" aria-pressed="false">👩‍🏫 Faculty</button>
+        <button class="filter-btn" data-filter="communication" aria-pressed="false">📣 Communication</button>
+        <button class="filter-btn" data-filter="innovation" aria-pressed="false">🚀 Innovation</button>
+        <button class="filter-btn" data-filter="budget" aria-pressed="false">💰 Budget</button>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Online Education <span>2026</span></h1>
+        <p class="subtitle">The Year of Intentional Innovation</p>
+        <p class="tagline">A Strategic Brainstorming Guide for College of the Canyons — Moving from reaction to strategy, from anxiety to intentionality.</p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">73.8M</div>
+                <div class="stat-label">Online Learners Globally</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$400B</div>
+                <div class="stat-label">E-Learning Market by 2026</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">Retention Boost with Microlearning</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">59:1</div>
+                <div class="stat-label">OER ROI (Massachusetts)</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Landscape -->
+    <main id="main-content">
+    <section id="landscape">
+        <h2>The Landscape: What's Happening Globally <a href="#landscape" class="section-link" aria-label="Link to this section" title="Copy link to section">🔗</a></h2>
+        <p class="section-subtitle">Higher education has moved from anxiety and reaction to strategy and intentionality. The institutions winning aren't those with the most technology — they're the ones with the clearest purpose.</p>
+
+        <div class="key-insight">
+            <strong>The Shift That Matters Most:</strong> In 2026, AI will stop being the thing higher education talks about and become the thing it plans alongside. — Inside Higher Ed
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag">Market Growth</span>
+                <h3>$400 Billion E-Learning Market</h3>
+                <p>The global e-learning market is projected to reach $400 billion by end of 2026, with 900% growth in online learners since 2000.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Microlearning</span>
+                <h3>80% Retention Improvement</h3>
+                <p>Research shows microlearning can be 5-10x more effective than traditional training, developed 3x faster, at 50% less cost.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Gamification</span>
+                <h3>$29.7B Game-Based Learning</h3>
+                <p>The game-based learning market is projected to reach $29.7 billion by 2026, with digital badges driving engagement.</p>
+            </div>
+            <div class="card">
+                <span class="tag">AI Literacy</span>
+                <h3>98.6% of Students Use AI</h3>
+                <p>Nearly all students who use AI say it helps their learning. 75% use AI tools as a regular learning aid. It's no longer optional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- California Community College Innovation -->
+    <section id="california">
+        <h2>California Community College Innovation</h2>
+        <p class="section-subtitle">What's happening in our own backyard — leading the nation in online education transformation.</p>
+
+        <div class="ca-highlight">
+            <h3>Digital Center for Innovation, Transformation and Equity</h3>
+            <p>Launched September 2024 in partnership with <a href="https://www.fhda.edu/" target="_blank" rel="noopener">Foothill-DeAnza</a> — an incubator for AI and digital technology advances serving the nation's largest higher education system.</p>
+            <div class="partner-tags">
+                <span class="partner-tag">Google</span>
+                <span class="partner-tag">Adobe</span>
+                <span class="partner-tag">IBM</span>
+                <span class="partner-tag">Microsoft</span>
+                <span class="partner-tag">NVIDIA</span>
+                <span class="partner-tag">Carnegie Mellon</span>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="card feature-card">
+                <span class="tag">First in California</span>
+                <h3><a href="https://www.coastline.edu/academics/cbe/" target="_blank" rel="noopener">Coastline College CBE</a></h3>
+                <p>First California CC approved for direct assessment Competency-Based Education degree program. Pace+ launching Spring 2025.</p>
+            </div>
+            <div class="card feature-card">
+                <span class="tag">Accelerated Success</span>
+                <h3><a href="https://www.lbcc.edu/" target="_blank" rel="noopener">Long Beach 8-Week Courses</a></h3>
+                <p>Doubled shorter-format offerings. Goal: 50% of courses in compressed format by Fall 2026. Dramatic success increases, especially for Black students.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Cross-Enrollment</span>
+                <h3><a href="https://cvc.edu/" target="_blank" rel="noopener">CVC Exchange</a> Enhancements</h3>
+                <p>New Financial Aid Dashboard automating federal aid for cross-enrolled students across all 115 California Community Colleges.</p>
+            </div>
+            <div class="card">
+                <span class="tag">$115M Investment</span>
+                <h3>Zero Textbook Cost Programs</h3>
+                <p>87 colleges received $22M+ for 300+ ZTC pathways. Award winners: Diablo Valley, Coalinga, Lemoore, MiraCosta.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Quality Assurance</span>
+                <h3>POCR Shows 4.9% Higher Success</h3>
+                <p>Peer Online Course Review courses show 4.9% higher success rates. Chaffey College: 14% increase after alignment.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Immersive Learning</span>
+                <h3><a href="https://dreamscapelearn.com/" target="_blank" rel="noopener">Long Beach VR with Dreamscape</a></h3>
+                <p>Equity Innovation Grants funding Dreamscape Learn VR experiences for immersive education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retreat Ideas -->
+    <section id="retreat">
+        <h2>Reimagining Your August Retreat</h2>
+        <p class="section-subtitle">Transform your retreat from passive listening to active building.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag">Theme Concept</span>
+                <h3>The Horizon Collective</h3>
+                <p>Each table becomes a "horizon team" exploring different time horizons (1 year, 3 years, 5 years). Collective vision-building.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Theme Concept</span>
+                <h3>Learning Futures Lab</h3>
+                <p>Transform your retreat into an interactive prototype lab where faculty actually BUILD things — not just listen.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Theme Concept</span>
+                <h3>The Unlearning Retreat</h3>
+                <p>Challenge faculty to identify what they need to STOP doing before adding new initiatives. Innovation through subtraction.</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Description</th>
+                    <th>Why It Works</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Pecha Kucha</strong></td>
+                    <td>20 slides, 20 seconds each</td>
+                    <td>Forces clarity, energizes audience</td>
+                </tr>
+                <tr>
+                    <td><strong>Fishbowl Discussion</strong></td>
+                    <td>Inner circle talks, outer observes, swap</td>
+                    <td>Deeper listening, diverse voices</td>
+                </tr>
+                <tr>
+                    <td><strong>World Café</strong></td>
+                    <td>Rotating tables with visual harvesting</td>
+                    <td>Cross-pollination of ideas</td>
+                </tr>
+                <tr>
+                    <td><strong>Reverse Mentoring</strong></td>
+                    <td>Newer/adjunct faculty lead for veterans</td>
+                    <td>Fresh perspectives, inclusive culture</td>
+                </tr>
+                <tr>
+                    <td><strong>Fail Fest</strong></td>
+                    <td>Share teaching experiments that didn't work</td>
+                    <td>Builds psychological safety</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 40px; color: var(--navy);">Speaker Innovations</h3>
+        <div class="card-grid" style="margin-top: 20px;">
+            <div class="card">
+                <h3>Student Panel</h3>
+                <p>Current online students share unfiltered experiences. Raw feedback, real insights.</p>
+            </div>
+            <div class="card">
+                <h3>Industry Roundtable</h3>
+                <p>Local employers discuss what skills actually matter. (Spoiler: it's not what we think.)</p>
+            </div>
+            <div class="card">
+                <h3>Teaching Slam</h3>
+                <p>5-minute rapid-fire presentations from your own faculty. Celebrate internal expertise.</p>
+            </div>
+            <div class="card">
+                <h3>Cross-Sector Spark</h3>
+                <p>Invite someone from gaming, UX design, or behavioral psychology. Outside perspectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communications -->
+    <section id="communications">
+        <h2>Reinventing Your Communications</h2>
+        <p class="section-subtitle">The 90/10 Rule: 90% educational/community content, 10% announcements.</p>
+
+        <div class="card-grid">
+            <div class="card feature-card">
+                <span class="tag">Weekly Series</span>
+                <h3>Two-Minute Tuesdays</h3>
+                <p>Ultra-short tips that can be read in 2 minutes. Respects faculty time while maintaining connection.</p>
+            </div>
+            <div class="card feature-card">
+                <span class="tag">Showcase</span>
+                <h3>Steal This Idea</h3>
+                <p>Feature one specific technique from a COC instructor each issue. Context, technique, results, adaptation tips.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Q&A</span>
+                <h3>Ask the ID</h3>
+                <p>Answer real faculty questions in friendly, jargon-free format. Create submission form, feature one Q&A each issue.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Research</span>
+                <h3>The Research Minute</h3>
+                <p>One study → one finding → your move. Distill research into practical action.</p>
+            </div>
+            <div class="card">
+                <span class="tag">Visual</span>
+                <h3>Before & After</h3>
+                <p>Course redesign transformations with visual examples. Celebrate work, inspire others.</p>
+            </div>
+        </div>
+
+        <div class="key-insight">
+            <strong>Interactive Elements:</strong> Add quick polls ("How are you using AI this semester?"), trivia about COC history, weekly challenges, and QR codes linking to video explanations.
+        </div>
+    </section>
+
+    <!-- Video Strategy -->
+    <section id="video">
+        <h2>Video Content Strategy</h2>
+        <p class="section-subtitle">Microlearning can be 5-10x more effective, developed 3x faster, at 50% less cost.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag">3-5 min</span>
+                <h3>Office Hours</h3>
+                <p>Casual, conversational videos addressing common questions. Film in actual offices — authenticity over production value.</p>
+            </div>
+            <div class="card">
+                <span class="tag">60 seconds</span>
+                <h3>In 60 Seconds</h3>
+                <p>Ultra-rapid tips: "Create a Rubric in 60 Seconds", "Add Captions in 60 Seconds", "Set Up Groups in 60 Seconds"</p>
+            </div>
+            <div class="card">
+                <span class="tag">2-3 min</span>
+                <h3>Tool Tuesdays</h3>
+                <p>Weekly spotlight on one tool, one feature, one use case. Build a library over time.</p>
+            </div>
+            <div class="card">
+                <span class="tag">3-5 min</span>
+                <h3>Student Perspective</h3>
+                <p>Students share what works and doesn't in their online courses. Raw, real, invaluable.</p>
+            </div>
+            <div class="card">
+                <span class="tag">5-7 min</span>
+                <h3>The Journey</h3>
+                <p>Documentary-style following faculty through course redesigns over a semester.</p>
+            </div>
+            <div class="card">
+                <span class="tag">5 min</span>
+                <h3>Quick Critique</h3>
+                <p>With permission, review anonymized course elements. Frame positively as "leveling up."</p>
+            </div>
+        </div>
+
+        <div class="key-insight">
+            <strong>Production Tips:</strong> Batch record multiple videos in one session. Create template graphics. Captions ALWAYS. Mobile-first design. Organize by topic in playlists.
+        </div>
+    </section>
+
+    <!-- Faculty Development -->
+    <section id="faculty-dev">
+        <h2>Faculty Development Innovation</h2>
+        <p class="section-subtitle">Beyond traditional workshops — building communities of practice.</p>
+
+        <div class="card-grid">
+            <div class="card feature-card">
+                <h3>The CLEAR Framework for AI</h3>
+                <p><strong>C</strong>ontextual learning • <strong>L</strong>earner-focused • <strong>E</strong>ducational objectives • <strong>A</strong>ction-oriented • <strong>R</strong>esult-driven</p>
+            </div>
+            <div class="card">
+                <h3>Innovation Fellowship</h3>
+                <p>Support faculty engaging in creative teaching practices. Small grants, recognition, presentation opportunities. (UMass model)</p>
+            </div>
+            <div class="card">
+                <h3>Video Creators Network</h3>
+                <p>Semester-long community helping instructors improve video production through peer collaboration.</p>
+            </div>
+            <div class="card">
+                <h3>Open Ed Practices Collaborative</h3>
+                <p>Partnership between Online Ed and Library for OER and open pedagogy awareness.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 50px; color: var(--navy);">Gamification & Badges</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Name</th>
+                    <th>Achievement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Explorer</strong></td>
+                    <td>Trying new things — first workshop, first tool</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Practitioner</strong></td>
+                    <td>Regular implementation — consistent engagement</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>Innovator</strong></td>
+                    <td>Creating and sharing original approaches</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>Mentor</strong></td>
+                    <td>Supporting colleagues — peer observation, coaching</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Bold Moonshots -->
+    <section id="moonshots">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <h2>Bold Moonshots</h2>
+            <p class="section-subtitle">The Radical Edge</p>
+
+            <h3 style="color: white; margin: 40px 0 20px;">Programs That Push Boundaries</h3>
+            <div class="card-grid">
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🎭</div>
+                    <h3>Teaching Underground</h3>
+                    <p>Informal opt-in sessions. No PowerPoints. No scripts. Just pure conversation about teaching.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🏔️</div>
+                    <h3>Sabbatical Sprints</h3>
+                    <p>1-2 week intensive mini-sabbaticals for radical course redesign. Full support, zero teaching.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🔄</div>
+                    <h3>Swap Week</h3>
+                    <p>Faculty observe each other's online courses across disciplines. Steal brilliant ideas.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">👥</div>
+                    <h3>Student Design Partners</h3>
+                    <p>Hire students as course design consultants. Pay them. Trust them. Embed their expertise.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">⚡</div>
+                    <h3>24-Hour Course Makeover</h3>
+                    <p>Hackathon-style redesign events. Teams, energy, rapid iteration. Remove bureaucratic friction.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🚀</div>
+                    <h3>The Ungrading Pilot</h3>
+                    <p>Test alternative assessment: contract grading, labor-based grading, mastery systems.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🌉</div>
+                    <h3>Cross-CC Faculty Exchange</h3>
+                    <p>Partner with other California CCs for virtual faculty exchanges. Learn how others innovate.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🎪</div>
+                    <h3>Pop-Up Learning Labs</h3>
+                    <p>Unexpected campus locations for spontaneous learning. Break out of the LMS.</p>
+                </div>
+                <div class="card moonshot-card">
+                    <div class="moonshot-icon">🎉</div>
+                    <h3>Fail Fest</h3>
+                    <p>Celebrate teaching experiments that didn't work. Mine failures for insights. Build brave culture.</p>
+                </div>
+            </div>
+
+            <h3 style="color: white; margin: 50px 0 20px;">Technology Explorations</h3>
+            <div class="card-grid">
+                <div class="card tech-card">
+                    <div class="moonshot-icon">🤖</div>
+                    <h3>AI Sandbox Sessions</h3>
+                    <p>Protected experimentation time with AI tools. Learn without fear of failure.</p>
+                </div>
+                <div class="card tech-card">
+                    <div class="moonshot-icon">🥽</div>
+                    <h3>VR/AR Taste Tests</h3>
+                    <p>Partner with industry for immersive demos. Experience the future firsthand.</p>
+                </div>
+                <div class="card tech-card">
+                    <div class="moonshot-icon">📊</div>
+                    <h3>Learning Analytics Deep Dives</h3>
+                    <p>Help faculty understand Canvas data. Turn metrics into instructional insights.</p>
+                </div>
+                <div class="card tech-card">
+                    <div class="moonshot-icon">👤</div>
+                    <h3>Student Digital Twins</h3>
+                    <p>Living models of student interactions. Predict paths. Personalize support.</p>
+                </div>
+                <div class="card tech-card">
+                    <div class="moonshot-icon">⛓️</div>
+                    <h3>DAOs for Learning</h3>
+                    <p>Blockchain-governed learning communities. Decentralized, student-owned credentials.</p>
+                </div>
+            </div>
+
+            <div class="pedagogy-section">
+                <h3>The <span style="color: #ffb700;">Radical Pedagogy</span> Corner</h3>
+                <div class="card-grid">
+                    <div class="card pedagogy-card">
+                        <h3>Rhizomatic Learning</h3>
+                        <p>Community IS the curriculum. Learning emerges from connection, not predetermined outcomes.</p>
+                        <p class="pedagogy-credit">— Dave Cormier</p>
+                    </div>
+                    <div class="card pedagogy-card">
+                        <h3>Productive Failure</h3>
+                        <p>Design for failure intentionally. Struggle generates deeper understanding. Confusion is a feature.</p>
+                        <p class="pedagogy-credit">— Manu Kapur</p>
+                    </div>
+                    <div class="card pedagogy-card">
+                        <h3>Critical Digital Pedagogy</h3>
+                        <p>Social justice first. Technology second. Every online course is political.</p>
+                        <p class="pedagogy-credit">— Jesse Stommel</p>
+                    </div>
+                    <div class="card pedagogy-card">
+                        <h3>Slow Pedagogy</h3>
+                        <p>Counter the acceleration. Deep work takes time. Speed is not a virtue.</p>
+                        <p class="pedagogy-credit">— Debra Ferreday</p>
+                    </div>
+                    <div class="card pedagogy-card">
+                        <h3>Students as Partners</h3>
+                        <p>Genuine curriculum co-design. Students aren't consumers — they're collaborators.</p>
+                        <p class="pedagogy-credit">— Alison Cook-Sather</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emerging Technology -->
+    <section id="emerging-tech">
+        <h2>Emerging Technology: What Works vs. What's Hype</h2>
+        <p class="section-subtitle">Technology matters when it enhances relationships, outcomes, and equity — not when used for its own sake.</p>
+
+        <div class="traffic-grid">
+            <div class="traffic-section green">
+                <div class="traffic-header">
+                    <span class="traffic-light"></span>
+                    Ready for Implementation
+                </div>
+                <div class="traffic-content">
+                    <div class="traffic-item">
+                        <h4><a href="https://www.khanacademy.org/khan-labs" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline dotted;">AI Tutoring (Khanmigo)</a></h4>
+                        <p>Personalized instruction at scale</p>
+                        <span class="stat-badge green">2M+ users</span>
+                        <span class="stat-badge green">731% growth</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Learning Analytics & Early Alert</h4>
+                        <p><a href="https://success.gsu.edu/initiatives/gps-advising/" target="_blank" rel="noopener" style="color: inherit;">Georgia State</a>: 800+ risk factors tracked daily</p>
+                        <span class="stat-badge green">21.4% summer melt reduction</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Adaptive Learning Platforms</h4>
+                        <p>Personalized learning paths</p>
+                        <span class="stat-badge green">59% show improved performance</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>VR Medical/Nursing Simulations</h4>
+                        <p>Hands-on practice in safe environments</p>
+                        <span class="stat-badge green"><a href="https://www.purdue.edu/newsroom/releases/2023/Q4/purdue-virtual-reality-nursing-education.html" target="_blank" rel="noopener" style="color: inherit;">Purdue</a>: 10-15% exam improvement</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>AI Course Design Tools</h4>
+                        <p>Blackboard AI Design Assistant, Canvas AI</p>
+                        <span class="stat-badge green">Hours → minutes for tasks</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Conversational AI Chatbots</h4>
+                        <p>24/7 student support</p>
+                        <span class="stat-badge green">90% cost reduction vs. human tutors</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="traffic-section yellow">
+                <div class="traffic-header">
+                    <span class="traffic-light"></span>
+                    Promising But Watch
+                </div>
+                <div class="traffic-content">
+                    <div class="traffic-item">
+                        <h4>Campus Digital Twins</h4>
+                        <p>Virtual replicas for engagement/orientation</p>
+                        <span class="stat-badge yellow"><a href="https://news.asu.edu/20231016-university-news-asu-openai-collaboration-will-transform-higher-education" target="_blank" rel="noopener" style="color: inherit;">Arizona State</a> implementation</span>
+                        <span class="stat-badge yellow">Georgia Southern active</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Non-Medical VR/AR</h4>
+                        <p>Subject-specific immersive content</p>
+                        <span class="stat-badge yellow">Mixed results by discipline</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Meta Quest 3S for Education</h4>
+                        <p>Affordable VR option</p>
+                        <span class="stat-badge yellow">$349 price point</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="traffic-section red">
+                <div class="traffic-header">
+                    <span class="traffic-light"></span>
+                    Still More Hype Than Reality
+                </div>
+                <div class="traffic-content">
+                    <div class="traffic-item">
+                        <h4>Apple Vision Pro in Education</h4>
+                        <p>Premium spatial computing</p>
+                        <span class="stat-badge red">$3,499 prohibitive</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Haptic Learning Technology</h4>
+                        <p>Touch-feedback systems</p>
+                        <span class="stat-badge red">Research phase only</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>Universal AI Replacement</h4>
+                        <p>AI as primary instructor</p>
+                        <span class="stat-badge red">Lacks emotional intelligence</span>
+                    </div>
+                    <div class="traffic-item">
+                        <h4>VR for Non-Hands-On Subjects</h4>
+                        <p>Immersive humanities</p>
+                        <span class="stat-badge red">Limited evidence of advantage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Measurement -->
+    <section id="measurement">
+        <h2>Measurement Framework: Proving Your Impact</h2>
+        <p class="section-subtitle">Data-driven strategies to demonstrate value and scale success.</p>
+
+        <div class="kirkpatrick-grid">
+            <div class="card">
+                <h3>The Kirkpatrick Model</h3>
+                <div class="level-item level-1">
+                    <div class="level-number">1</div>
+                    <div class="level-content">
+                        <h4>Reaction</h4>
+                        <p>Workshop ratings, satisfaction surveys, NPS</p>
+                    </div>
+                </div>
+                <div class="level-item level-2">
+                    <div class="level-number">2</div>
+                    <div class="level-content">
+                        <h4>Learning</h4>
+                        <p>Pre/post assessments, skill demonstrations, certifications</p>
+                    </div>
+                </div>
+                <div class="level-item level-3">
+                    <div class="level-number">3</div>
+                    <div class="level-content">
+                        <h4>Behavior</h4>
+                        <p>Course redesigns, teaching changes, tech adoption</p>
+                    </div>
+                </div>
+                <div class="level-item level-4">
+                    <div class="level-number">4</div>
+                    <div class="level-content">
+                        <h4>Results</h4>
+                        <p>Student outcomes, QM certification, retention</p>
+                    </div>
+                </div>
+                <div class="key-insight" style="margin-top: 20px;">
+                    <strong>Key Insight:</strong> Start at Level 4 and work backward. Define desired outcomes first.
+                </div>
+            </div>
+
+            <div class="card okr-card">
+                <h3>OKR Examples for Online Ed</h3>
+                <h4 style="margin-top: 20px; color: var(--navy);">Student Success Objective</h4>
+                <div class="kr-grid">
+                    <div class="kr-item">
+                        <div class="kr-metric">72%→82%</div>
+                        <div class="kr-label">Course Completion</div>
+                    </div>
+                    <div class="kr-item">
+                        <div class="kr-metric">-15%</div>
+                        <div class="kr-label">DFW Rate</div>
+                    </div>
+                    <div class="kr-item">
+                        <div class="kr-metric">3.8→4.2</div>
+                        <div class="kr-label">Satisfaction</div>
+                    </div>
+                </div>
+                <h4 style="margin-top: 30px; color: var(--navy);">Faculty Development Objective</h4>
+                <div class="kr-grid">
+                    <div class="kr-item">
+                        <div class="kr-metric">80%</div>
+                        <div class="kr-label">QM Training Complete</div>
+                    </div>
+                    <div class="kr-item">
+                        <div class="kr-metric">50%</div>
+                        <div class="kr-label">Courses QM Certified</div>
+                    </div>
+                    <div class="kr-item">
+                        <div class="kr-metric">45→60</div>
+                        <div class="kr-label">Faculty Dev NPS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="color: var(--navy); margin-bottom: 20px;">Quality Matters Impact</h3>
+        <div class="impact-grid">
+            <div class="card impact-card">
+                <div class="impact-metric">+7%</div>
+                <div class="impact-label">Grade Increase After QM Redesign</div>
+            </div>
+            <div class="card impact-card">
+                <div class="impact-metric">95%</div>
+                <div class="impact-label">Course Reps Make Changes After Reviews</div>
+            </div>
+            <div class="card impact-card">
+                <div class="impact-metric">94%</div>
+                <div class="impact-label">PD Participants Modify Courses</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget -->
+    <section id="budget">
+        <h2>Budget Guide: Innovation at Every Price Point</h2>
+        <p class="section-subtitle">From free tools to major investments — options for every budget.</p>
+
+        <div class="budget-grid">
+            <div class="budget-card free">
+                <div class="budget-header">
+                    <h3>FREE</h3>
+                    <div class="price">$0</div>
+                </div>
+                <div class="budget-content">
+                    <ul>
+                        <li>ChatGPT for Teachers (free through June 2027)</li>
+                        <li>Khanmigo AI teaching assistant</li>
+                        <li>MagicSchool.ai (60+ tools)</li>
+                        <li>H5P interactive content</li>
+                        <li>OBS Studio for video</li>
+                        <li>Canva for Education</li>
+                        <li>Quality Matters free webinars</li>
+                        <li>Peer mentoring circles</li>
+                        <li>OER adoption (59:1 ROI)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="budget-card starter">
+                <div class="budget-header">
+                    <h3>STARTER</h3>
+                    <div class="price">Under $1K</div>
+                </div>
+                <div class="budget-content">
+                    <ul>
+                        <li>DIY Lightboard studio ($150-500)</li>
+                        <li>Edpuzzle interactive video</li>
+                        <li>Mentimeter presentations</li>
+                        <li>Kahoot assessments</li>
+                        <li>Conference attendance</li>
+                        <li>Basic video equipment</li>
+                        <li>Microphone upgrades</li>
+                        <li>Lighting kits</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="budget-card growth">
+                <div class="budget-header">
+                    <h3>GROWTH</h3>
+                    <div class="price">Under $10K</div>
+                </div>
+                <div class="budget-content">
+                    <ul>
+                        <li>Quality Matters membership</li>
+                        <li>Course-sharing consortium (CIC)</li>
+                        <li>Micro-credentialing platform</li>
+                        <li>Student worker programs</li>
+                        <li>OER development stipends</li>
+                        <li>Faculty fellowship grants</li>
+                        <li>Video editing software</li>
+                        <li>Professional development series</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="budget-card enterprise">
+                <div class="budget-header">
+                    <h3>MAJOR</h3>
+                    <div class="price">$10K+</div>
+                </div>
+                <div class="budget-content">
+                    <ul>
+                        <li>FIPSE AI grants ($50M pool)</li>
+                        <li>State OER grants (CO: $1M)</li>
+                        <li>VR simulation equipment</li>
+                        <li>Shared services consortium</li>
+                        <li>Enterprise captioning</li>
+                        <li>Learning analytics platform</li>
+                        <li>Professional video studio</li>
+                        <li>Full accessibility audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="key-insight">
+            <strong>Smart Spending Priority:</strong> Start with FREE AI tools for faculty productivity → Build DIY video studio ($150) → Pursue grants for bigger initiatives.
+        </div>
+    </section>
+
+    <!-- Quick Wins -->
+    <section id="quick-wins">
+        <h2>Quick Wins for 2026</h2>
+        <p class="section-subtitle">Actionable items organized by timeline.</p>
+
+        <div class="timeline-grid">
+            <div class="card timeline-card">
+                <h3>This Month</h3>
+                <ul>
+                    <li>Add polls to your newsletter</li>
+                    <li>Start a "Steal This Idea" section</li>
+                    <li>Create ONE 60-second video</li>
+                    <li>Set up a virtual drop-in hour</li>
+                    <li>Try ChatGPT for Teachers</li>
+                </ul>
+            </div>
+            <div class="card timeline-card">
+                <h3>This Semester</h3>
+                <ul>
+                    <li>Launch a digital badge for one training</li>
+                    <li>Pilot peer observation with 5 volunteers</li>
+                    <li>Host one Teaching Slam event</li>
+                    <li>Create a video playlist of best tips</li>
+                    <li>Start faculty learning community</li>
+                </ul>
+            </div>
+            <div class="card timeline-card">
+                <h3>This Year</h3>
+                <ul>
+                    <li>Develop faculty fellowship program</li>
+                    <li>Build microlearning video library</li>
+                    <li>Redesign retreat with interactive formats</li>
+                    <li>Create COC Online Ed podcast</li>
+                    <li>Apply for FIPSE or state grants</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <h3>Sources & Further Reading</h3>
+            <div class="source-grid">
+                <div class="source-category">
+                    <h4>California CC Innovation</h4>
+                    <ul>
+                        <li><a href="https://www.cccco.edu">CA CC Chancellor's Office</a></li>
+                        <li><a href="https://cvc.edu">California Virtual Campus</a></li>
+                        <li><a href="https://onlinenetworkofeducators.org">Online Network of Educators</a></li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h4>Trends & Research</h4>
+                    <ul>
+                        <li><a href="https://www.insidehighered.com">Inside Higher Ed AI Predictions</a></li>
+                        <li><a href="https://www.educause.edu">EDUCAUSE Guidelines</a></li>
+                        <li><a href="https://hepinc.com">HEP Higher Ed Trends</a></li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h4>Faculty Development</h4>
+                    <ul>
+                        <li><a href="https://www.qualitymatters.org">Quality Matters</a></li>
+                        <li><a href="https://www.aacu.org">AAC&U AI Institute</a></li>
+                        <li><a href="https://www.umass.edu/ideas">UMass IDEAS Team</a></li>
+                    </ul>
+                </div>
+                <div class="source-category">
+                    <h4>Podcasts</h4>
+                    <ul>
+                        <li><a href="https://teachinginhighered.com">Teaching in Higher Ed</a></li>
+                        <li><a href="#">Tea for Teaching (SUNY)</a></li>
+                        <li><a href="#">TOPcast (UCF)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 40px; text-align: center; opacity: 0.7;">
+                Prepared for College of the Canyons Online Education Department<br>
+                Time Horizon Planning 2026 | Version 2.0
+            </p>
+        </div>
+    </footer>
+    <script>
+    // ========================================
+    // Online Education 2026 - Interactive Features
+    // ========================================
+
+    (function() {
+        'use strict';
+
+        // --- Utility Functions ---
+        const $ = (sel) => document.querySelector(sel);
+        const $$ = (sel) => document.querySelectorAll(sel);
+
+        function showToast(message, duration = 3000) {
+            const toast = $('#toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), duration);
+        }
+
+        // --- Progress Bar ---
+        const progressBar = $('#progressBar');
+        function updateProgressBar() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+        }
+        window.addEventListener('scroll', updateProgressBar);
+        updateProgressBar();
+
+        // --- Dark Mode ---
+        const darkModeToggle = $('#darkModeToggle');
+        const darkModeKey = 'coc-online-ed-2026-dark-mode';
+
+        function setDarkMode(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem(darkModeKey, isDark);
+        }
+
+        // Load saved preference
+        if (localStorage.getItem(darkModeKey) === 'true') {
+            setDarkMode(true);
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!document.body.classList.contains('dark-mode'));
+            showToast(document.body.classList.contains('dark-mode') ? 'Dark mode enabled' : 'Light mode enabled');
+        });
+
+        // --- Back to Top ---
+        const backToTop = $('#backToTop');
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            backToTop.style.opacity = window.scrollY > 500 ? '1' : '0.5';
+        });
+
+        // --- Active Nav Highlighting ---
+        const navLinks = $$('nav a');
+        const sections = $$('section[id]');
+
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 200;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveNav);
+
+        // --- Bookmarks System ---
+        const bookmarksKey = 'coc-online-ed-2026-bookmarks';
+        const bookmarksToggle = $('#bookmarksToggle');
+        const bookmarksPanel = $('#bookmarksPanel');
+        const bookmarksClose = $('#bookmarksClose');
+        const bookmarksContent = $('#bookmarksContent');
+        const bookmarksExport = $('#bookmarksExport');
+
+        let bookmarks = JSON.parse(localStorage.getItem(bookmarksKey) || '[]');
+
+        function saveBookmarks() {
+            localStorage.setItem(bookmarksKey, JSON.stringify(bookmarks));
+            renderBookmarks();
+            updateBookmarkButtons();
+        }
+
+        function renderBookmarks() {
+            if (bookmarks.length === 0) {
+                bookmarksContent.innerHTML = '<p class="bookmarks-empty">Click the ⭐ on any card to save it here!</p>';
+            } else {
+                bookmarksContent.innerHTML = bookmarks.map((b, i) => `
+                    <div class="bookmark-item">
+                        <div class="bookmark-title">${b.title}</div>
+                        <div class="bookmark-section">${b.section}</div>
+                        <button class="bookmark-remove" data-index="${i}">×</button>
+                    </div>
+                `).join('');
+
+                // Add remove listeners
+                bookmarksContent.querySelectorAll('.bookmark-remove').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const index = parseInt(e.target.dataset.index);
+                        bookmarks.splice(index, 1);
+                        saveBookmarks();
+                        showToast('Bookmark removed');
+                    });
+                });
+            }
+        }
+
+        function updateBookmarkButtons() {
+            $$('.card-bookmark').forEach(btn => {
+                const title = btn.dataset.title;
+                const isBookmarked = bookmarks.some(b => b.title === title);
+                btn.textContent = isBookmarked ? '★' : '☆';
+                btn.classList.toggle('active', isBookmarked);
+            });
+        }
+
+        bookmarksToggle.addEventListener('click', () => {
+            bookmarksPanel.classList.toggle('show');
+        });
+
+        bookmarksClose.addEventListener('click', () => {
+            bookmarksPanel.classList.remove('show');
+        });
+
+        bookmarksExport.addEventListener('click', () => {
+            if (bookmarks.length === 0) {
+                showToast('No bookmarks to export');
+                return;
+            }
+            const text = bookmarks.map(b => `[${b.section}] ${b.title}`).join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Bookmarks copied to clipboard!');
+            });
+        });
+
+        // --- Add Bookmark Buttons to Cards ---
+        function addCardInteractions() {
+            $$('.card').forEach((card, index) => {
+                const titleEl = card.querySelector('h3');
+                if (!titleEl) return;
+
+                const title = titleEl.textContent.trim();
+                const section = card.closest('section')?.querySelector('h2')?.textContent || 'General';
+
+                // Bookmark button
+                const bookmarkBtn = document.createElement('button');
+                bookmarkBtn.className = 'card-bookmark';
+                bookmarkBtn.dataset.title = title;
+                bookmarkBtn.dataset.section = section;
+                bookmarkBtn.textContent = '☆';
+                bookmarkBtn.title = 'Bookmark this idea';
+
+                bookmarkBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const existingIndex = bookmarks.findIndex(b => b.title === title);
+                    if (existingIndex >= 0) {
+                        bookmarks.splice(existingIndex, 1);
+                        showToast('Removed from bookmarks');
+                    } else {
+                        bookmarks.push({ title, section });
+                        showToast('Added to bookmarks ⭐');
+                    }
+                    saveBookmarks();
+                });
+
+                card.style.position = 'relative';
+                card.appendChild(bookmarkBtn);
+
+                // Copy button
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'card-copy';
+                copyBtn.textContent = '📋 Copy';
+                copyBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const text = card.textContent.replace('📋 Copy', '').replace('☆', '').replace('★', '').trim();
+                    navigator.clipboard.writeText(text).then(() => {
+                        showToast('Card content copied!');
+                    });
+                });
+                card.appendChild(copyBtn);
+            });
+
+            updateBookmarkButtons();
+        }
+
+        // --- Search Functionality ---
+        const searchOverlay = $('#searchOverlay');
+        const searchInput = $('#searchInput');
+        const searchResults = $('#searchResults');
+        const searchClose = $('#searchClose');
+
+        function openSearch() {
+            searchOverlay.classList.add('show');
+            searchInput.focus();
+        }
+
+        function closeSearch() {
+            searchOverlay.classList.remove('show');
+            searchInput.value = '';
+            searchResults.innerHTML = '';
+        }
+
+        // Keyboard shortcut: Ctrl/Cmd + K
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openSearch();
+            }
+            if (e.key === 'Escape') {
+                closeSearch();
+                bookmarksPanel.classList.remove('show');
+            }
+        });
+
+        searchClose.addEventListener('click', closeSearch);
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) closeSearch();
+        });
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase().trim();
+            if (query.length < 2) {
+                searchResults.innerHTML = '<p class="search-hint">Type at least 2 characters...</p>';
+                return;
+            }
+
+            const results = [];
+            $$('.card, section h2, section p, li').forEach(el => {
+                const text = el.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    const section = el.closest('section');
+                    const sectionTitle = section?.querySelector('h2')?.textContent || 'Document';
+                    const sectionId = section?.id || '';
+
+                    // Get snippet
+                    const fullText = el.textContent;
+                    const index = text.indexOf(query);
+                    const start = Math.max(0, index - 30);
+                    const end = Math.min(fullText.length, index + query.length + 30);
+                    let snippet = fullText.substring(start, end);
+                    if (start > 0) snippet = '...' + snippet;
+                    if (end < fullText.length) snippet = snippet + '...';
+
+                    results.push({ sectionTitle, sectionId, snippet });
+                }
+            });
+
+            // Dedupe and limit
+            const unique = [...new Map(results.map(r => [r.snippet, r])).values()].slice(0, 10);
+
+            if (unique.length === 0) {
+                searchResults.innerHTML = '<p class="search-no-results">No results found</p>';
+            } else {
+                searchResults.innerHTML = unique.map(r => `
+                    <div class="search-result" data-section="${r.sectionId}">
+                        <div class="search-result-section">${r.sectionTitle}</div>
+                        <div class="search-result-text">${r.snippet}</div>
+                    </div>
+                `).join('');
+
+                searchResults.querySelectorAll('.search-result').forEach(el => {
+                    el.addEventListener('click', () => {
+                        const id = el.dataset.section;
+                        closeSearch();
+                        if (id) {
+                            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+        });
+
+        // --- Animated Stat Counters ---
+        function animateCounters() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            $$('.stat-number').forEach(el => observer.observe(el));
+        }
+
+        // --- Quick Wins Checklist ---
+        const checklistKey = 'coc-online-ed-2026-checklist';
+        let checkedItems = JSON.parse(localStorage.getItem(checklistKey) || '[]');
+
+        function setupChecklist() {
+            const quickWinsSection = $('#quick-wins');
+            if (!quickWinsSection) return;
+
+            const listItems = quickWinsSection.querySelectorAll('li');
+            listItems.forEach((li, index) => {
+                const text = li.textContent;
+                const id = `checklist-${index}`;
+                const isChecked = checkedItems.includes(id);
+
+                li.className = 'checklist-item' + (isChecked ? ' completed' : '');
+                li.innerHTML = `
+                    <span class="checklist-checkbox">${isChecked ? '✓' : ''}</span>
+                    <span class="checklist-text">${text}</span>
+                `;
+                li.dataset.id = id;
+
+                li.addEventListener('click', () => {
+                    const itemId = li.dataset.id;
+                    if (checkedItems.includes(itemId)) {
+                        checkedItems = checkedItems.filter(i => i !== itemId);
+                        li.classList.remove('completed');
+                        li.querySelector('.checklist-checkbox').textContent = '';
+                    } else {
+                        checkedItems.push(itemId);
+                        li.classList.add('completed');
+                        li.querySelector('.checklist-checkbox').textContent = '✓';
+                        showToast('Task completed! 🎉');
+                    }
+                    localStorage.setItem(checklistKey, JSON.stringify(checkedItems));
+                    updateProgressCounter();
+                });
+            });
+
+            // Add progress counter
+            const counter = document.createElement('div');
+            counter.className = 'checklist-progress';
+            counter.id = 'checklistProgress';
+            quickWinsSection.querySelector('h2').after(counter);
+            updateProgressCounter();
+        }
+
+        function updateProgressCounter() {
+            const counter = $('#checklistProgress');
+            if (!counter) return;
+            const total = $$('#quick-wins li').length;
+            const completed = checkedItems.length;
+            counter.innerHTML = `<span class="progress-count">${completed}/${total}</span> tasks completed`;
+        }
+
+        // --- Section Deep Links ---
+        function setupSectionLinks() {
+            $$('section[id] h2').forEach(h2 => {
+                const section = h2.closest('section');
+                const id = section?.id;
+                if (!id || h2.querySelector('.section-link')) return;
+
+                const link = document.createElement('a');
+                link.href = '#' + id;
+                link.className = 'section-link';
+                link.setAttribute('aria-label', 'Copy link to this section');
+                link.setAttribute('title', 'Copy link to section');
+                link.textContent = '🔗';
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = window.location.origin + window.location.pathname + '#' + id;
+                    navigator.clipboard.writeText(url).then(() => {
+                        // Update URL without scrolling
+                        history.pushState(null, '', '#' + id);
+                        showShareToast('Link copied! ' + url);
+                    });
+                });
+
+                h2.appendChild(link);
+            });
+
+            // Handle initial hash on page load
+            if (window.location.hash) {
+                const id = window.location.hash.slice(1);
+                const el = document.getElementById(id);
+                if (el) {
+                    setTimeout(() => {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        }
+
+        function showShareToast(message) {
+            const toast = $('#shareToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // --- Card Filtering ---
+        const categoryKeywords = {
+            strategy: ['planning', 'strategy', 'vision', 'goals', 'mission', 'assessment', 'evaluation', 'framework', 'model', 'approach', 'priorities', 'institutional'],
+            technology: ['ai', 'vr', 'ar', 'lms', 'canvas', 'video', 'technology', 'digital', 'platform', 'tool', 'software', 'chatbot', 'automation', 'analytics', 'data'],
+            faculty: ['faculty', 'instructor', 'teaching', 'training', 'development', 'pedagogy', 'professional', 'workshop', 'certification', 'mentorship', 'peer'],
+            communication: ['newsletter', 'email', 'social', 'communication', 'outreach', 'engagement', 'marketing', 'brand', 'message', 'announcement'],
+            innovation: ['moonshot', 'radical', 'innovation', 'disrupt', 'experiment', 'pilot', 'future', 'emerging', 'creative', 'bold', 'visionary'],
+            budget: ['budget', 'cost', 'free', 'affordable', 'investment', 'roi', 'grant', 'funding', 'resource', 'spend', 'money', '$']
+        };
+
+        function categorizeCards() {
+            $$('.card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const categories = [];
+
+                for (const [category, keywords] of Object.entries(categoryKeywords)) {
+                    if (keywords.some(kw => text.includes(kw))) {
+                        categories.push(category);
+                    }
+                }
+
+                if (categories.length > 0) {
+                    card.dataset.category = categories.join(' ');
+                } else {
+                    card.dataset.category = 'general';
+                }
+            });
+        }
+
+        function setupFiltering() {
+            const filterBtns = $$('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+
+                    // Filter cards
+                    $$('.card[data-category]').forEach(card => {
+                        if (filter === 'all' || card.dataset.category.includes(filter)) {
+                            card.classList.remove('filtered-out');
+                        } else {
+                            card.classList.add('filtered-out');
+                        }
+                    });
+
+                    // Update counts
+                    updateFilterCounts();
+
+                    // Announce to screen readers
+                    const visibleCount = $$('.card[data-category]:not(.filtered-out)').length;
+                    showToast(`Showing ${visibleCount} cards`);
+                });
+            });
+        }
+
+        function updateFilterCounts() {
+            const counts = { all: 0, strategy: 0, technology: 0, faculty: 0, communication: 0, innovation: 0, budget: 0 };
+
+            $$('.card[data-category]').forEach(card => {
+                counts.all++;
+                const cats = card.dataset.category.split(' ');
+                cats.forEach(cat => {
+                    if (counts[cat] !== undefined) counts[cat]++;
+                });
+            });
+
+            $$('.filter-btn').forEach(btn => {
+                const filter = btn.dataset.filter;
+                let countSpan = btn.querySelector('.count');
+                if (!countSpan) {
+                    countSpan = document.createElement('span');
+                    countSpan.className = 'count';
+                    btn.appendChild(countSpan);
+                }
+                countSpan.textContent = counts[filter] || 0;
+            });
+        }
+
+        // --- Enhanced Search with Highlighting ---
+        let currentHighlights = [];
+
+        function clearHighlights() {
+            currentHighlights.forEach(el => {
+                const parent = el.parentNode;
+                parent.replaceChild(document.createTextNode(el.textContent), el);
+                parent.normalize();
+            });
+            currentHighlights = [];
+        }
+
+        function highlightText(query) {
+            clearHighlights();
+            if (!query || query.length < 2) return;
+
+            const walker = document.createTreeWalker(
+                document.querySelector('main'),
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const textNodes = [];
+            while (walker.nextNode()) {
+                textNodes.push(walker.currentNode);
+            }
+
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+
+            textNodes.forEach(node => {
+                if (node.textContent.toLowerCase().includes(query.toLowerCase())) {
+                    const parent = node.parentNode;
+                    if (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE') return;
+
+                    const frag = document.createDocumentFragment();
+                    const parts = node.textContent.split(regex);
+
+                    parts.forEach(part => {
+                        if (part.toLowerCase() === query.toLowerCase()) {
+                            const mark = document.createElement('mark');
+                            mark.className = 'search-highlight';
+                            mark.textContent = part;
+                            frag.appendChild(mark);
+                            currentHighlights.push(mark);
+                        } else {
+                            frag.appendChild(document.createTextNode(part));
+                        }
+                    });
+
+                    parent.replaceChild(frag, node);
+                }
+            });
+        }
+
+        // Update the search result click to also highlight
+        function enhanceSearchResults() {
+            const originalHandler = searchInput.oninput;
+            searchResults.addEventListener('click', (e) => {
+                const result = e.target.closest('.search-result');
+                if (result) {
+                    const query = searchInput.value.trim();
+                    setTimeout(() => highlightText(query), 200);
+                }
+            });
+        }
+
+        // --- Update Progress Bar ARIA ---
+        function updateProgressBarAria() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = Math.round((scrollTop / docHeight) * 100);
+            progressBar.setAttribute('aria-valuenow', progress);
+        }
+
+        // --- Initialize ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Core features
+            addCardInteractions();
+            renderBookmarks();
+            animateCounters();
+            setupChecklist();
+
+            // A+ features
+            setupSectionLinks();
+            categorizeCards();
+            setupFiltering();
+            updateFilterCounts();
+            enhanceSearchResults();
+
+            // Update progress bar ARIA on scroll
+            window.addEventListener('scroll', updateProgressBarAria);
+
+            // Add keyboard hint to nav
+            const nav = $('nav .nav-container');
+            if (nav) {
+                const hint = document.createElement('span');
+                hint.className = 'search-kbd-hint';
+                hint.innerHTML = '<kbd>⌘</kbd><kbd>K</kbd> Search';
+                hint.style.cssText = 'opacity: 0.6; font-size: 0.85rem; margin-left: auto; cursor: pointer;';
+                hint.addEventListener('click', openSearch);
+                nav.appendChild(hint);
+            }
+
+            // Clear highlights when closing search
+            const originalCloseSearch = closeSearch;
+            window.closeSearchWithClear = () => {
+                clearHighlights();
+                originalCloseSearch();
+            };
+
+            console.log('%c🎓 Online Education 2026', 'color: #003366; font-size: 20px; font-weight: bold;');
+            console.log('%cPrepared for College of the Canyons', 'color: #FFB81C;');
+            console.log('%c✨ A+ Edition with deep links, filtering, and search highlighting', 'color: #10b981;');
+        });
+
+    })();
+    </script>
+</body>
+</html>
