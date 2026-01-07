@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Captioning Requirements | Faculty Guide | College of the Canyons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coc-blue: #003366;
+            --coc-gold: #c8a53c;
+            --coc-light-blue: #0066cc;
+            --accent: #00a3e0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--coc-blue) 0%, #004080 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--coc-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--coc-blue);
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--coc-blue) 0%, #001a33 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .deadline-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--danger);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--coc-gold);
+            color: var(--coc-blue);
+        }
+
+        .btn-primary:hover {
+            background: #d4b348;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200, 165, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--coc-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-description {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.25rem 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-danger {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #92400e;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+        }
+
+        /* Key Points Grid */
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .key-point {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .key-point-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--coc-blue), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .key-point h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--coc-blue);
+        }
+
+        .key-point p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            position: relative;
+            padding-left: 5rem;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 1.5rem;
+            top: 2rem;
+            width: 40px;
+            height: 40px;
+            background: var(--coc-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--coc-blue);
+        }
+
+        .step p {
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+        }
+
+        .step-actions {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .step-actions ol {
+            margin-left: 1.25rem;
+            color: var(--text-medium);
+        }
+
+        .step-actions li {
+            padding: 0.25rem 0;
+        }
+
+        .step-actions code {
+            background: #e0e7ff;
+            color: var(--coc-blue);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        /* Best Practices */
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .practice-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .practice-header {
+            background: var(--coc-blue);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .practice-body {
+            padding: 1.5rem;
+        }
+
+        .practice-body ul {
+            list-style: none;
+        }
+
+        .practice-body li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-medium);
+        }
+
+        .practice-body li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .example-box-header {
+            font-weight: 600;
+            color: var(--coc-blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .example-box p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .example-box .quote {
+            background: white;
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--coc-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-medium);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid var(--coc-gold);
+        }
+
+        .checklist h3 {
+            font-size: 1.5rem;
+            color: var(--coc-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-items {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #e0f2fe;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--success);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .checklist-item.checked label {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+
+        /* Resources */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .resource-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--coc-blue);
+        }
+
+        .resource-card p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: var(--coc-blue);
+            border-radius: 50%;
+            border: 3px solid var(--bg-light);
+        }
+
+        .timeline-item.current::before {
+            background: var(--warning);
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-item.future::before {
+            background: var(--text-light);
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--coc-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content {
+            color: var(--text-medium);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--coc-blue);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--coc-gold);
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .step {
+                padding-left: 4rem;
+            }
+
+            .step::before {
+                left: 1rem;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+
+            .practices-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print */
+        @media print {
+            header, .hero-cta, footer {
+                display: none;
+            }
+
+            .hero {
+                background: white;
+                color: black;
+                padding: 1rem;
+            }
+
+            .card, .step, .faq-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">CC</div>
+                <span class="logo-text">College of the Canyons</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#how-to">How To</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#checklist">Checklist</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="deadline-badge">
+                <span>COMPLIANCE DEADLINE: APRIL 24, 2026</span>
+            </div>
+            <h1>Live Captioning Requirements for Online Instruction</h1>
+            <p class="hero-subtitle">New federal ADA Title II regulations require live captions with speaker identification for all synchronous online courses. Here's everything you need to know.</p>
+            <div class="hero-cta">
+                <a href="#how-to" class="btn btn-primary">Get Started Now</a>
+                <a href="#checklist" class="btn btn-secondary">View Checklist</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="section-header">
+                <h2>What's Changing?</h2>
+                <p class="section-description">The U.S. Department of Justice has issued new regulations that affect how we deliver live online instruction.</p>
+            </div>
+
+            <div class="alert alert-danger">
+                <span class="alert-icon">!</span>
+                <div>
+                    <strong>This is a Legal Requirement, Not a Request</strong>
+                    <p>Starting April 24, 2026, all live online instruction must include real-time captions with speaker identification. This applies to every synchronous online class, regardless of whether any student has requested accommodations.</p>
+                </div>
+            </div>
+
+            <div class="key-points">
+                <div class="key-point">
+                    <div class="key-point-icon">CC</div>
+                    <h3>Proactive Captions</h3>
+                    <p>Captions must be available for ALL sessions, not just upon request. This is a major shift from previous policy.</p>
+                </div>
+                <div class="key-point">
+                    <div class="key-point-icon">ID</div>
+                    <h3>Speaker Identification</h3>
+                    <p>Captions must make clear who is speaking, especially in discussion-based courses with multiple participants.</p>
+                </div>
+                <div class="key-point">
+                    <div class="key-point-icon">LIVE</div>
+                    <h3>Real-Time Delivery</h3>
+                    <p>Captions must appear synchronized with live speech, not added later. This affects all live Zoom sessions.</p>
+                </div>
+                <div class="key-point">
+                    <div class="key-point-icon">ALL</div>
+                    <h3>Universal Access</h3>
+                    <p>Benefits everyone: deaf/hard of hearing students, ESL learners, those in noisy environments, and students who learn better with text.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 style="margin-bottom: 1rem; color: var(--coc-blue);">Why This Matters</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Legal Consequences</h4>
+                        <ul style="color: var(--text-medium); margin-left: 1.25rem;">
+                            <li>Office for Civil Rights complaints</li>
+                            <li>Loss of federal funding</li>
+                            <li>Legal action from students</li>
+                            <li>Course restrictions or closure</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--success); margin-bottom: 0.5rem;">Student Benefits</h4>
+                        <ul style="color: var(--text-medium); margin-left: 1.25rem;">
+                            <li><strong>98.6%</strong> of caption users say they're helpful</li>
+                            <li><strong>75%</strong> use captions as a learning aid</li>
+                            <li><strong>52%</strong> report improved comprehension</li>
+                            <li>Benefits extend beyond disability accommodations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements Section -->
+        <section id="requirements">
+            <div class="section-header">
+                <h2>What's Required?</h2>
+                <p class="section-description">Understanding the federal requirements under WCAG 2.1 Level AA standards.</p>
+            </div>
+
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>Affected Content</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>All synchronous online courses</li>
+                            <li>Hybrid/HyFlex courses with live components</li>
+                            <li>Live-streamed lectures and presentations</li>
+                            <li>Office hours conducted via Zoom</li>
+                            <li>Committee and department meetings (public)</li>
+                            <li>Any live audio content accessible online</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>NOT Affected (Yet)</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>In-person-only classes with no online component</li>
+                            <li>Asynchronous content (separate, existing requirements)</li>
+                            <li>Private one-on-one meetings</li>
+                            <li>Internal staff meetings without public access</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-light);"><em>Note: Pre-recorded videos have required captions for years - that's not new.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info" style="margin-top: 2rem;">
+                <span class="alert-icon">i</span>
+                <div>
+                    <strong>The Key Change: Proactive, Not Reactive</strong>
+                    <p>Previously, captions were provided "upon request" through disability accommodations. Now, captions must be proactively available for ALL students in ALL live sessions, regardless of whether anyone has requested accommodations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How To Section -->
+        <section id="how-to">
+            <div class="section-header">
+                <h2>How to Enable Live Captions in Zoom</h2>
+                <p class="section-description">Follow these steps to ensure your live classes are compliant.</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <h3>Turn On Zoom Auto-Captions</h3>
+                    <p>This is the essential first step for every live class session.</p>
+                    <div class="step-actions">
+                        <ol>
+                            <li>Start your Zoom meeting as usual</li>
+                            <li>Look for the <code>Live Transcript</code> or <code>Captions</code> button on the toolbar</li>
+                            <li>Click it and select <code>Enable Auto-Transcription</code></li>
+                            <li>Captions will now appear for all participants who enable them</li>
+                        </ol>
+                    </div>
+                    <div class="alert alert-success" style="margin-top: 1rem;">
+                        <span class="alert-icon">TIP</span>
+                        <div>Students can turn captions on/off individually - they control their own viewing experience.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Update Your Zoom Display Name</h3>
+                    <p>Your display name helps automated captions identify you as the speaker.</p>
+                    <div class="step-actions">
+                        <ol>
+                            <li>Before your meeting, click on your name/video</li>
+                            <li>Select <code>Rename</code></li>
+                            <li>Change to include your role: <strong>"Dr. Smith - Instructor"</strong> or <strong>"Prof. Garcia"</strong></li>
+                            <li>This name will appear in captions when you speak</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Implement Speaker Identification Practices</h3>
+                    <p>Federal standards require that captions identify speakers so viewers can follow multi-speaker discussions.</p>
+
+                    <div class="example-box">
+                        <div class="example-box-header">When Calling on Students:</div>
+                        <p>Use their name when acknowledging them:</p>
+                        <div class="quote">"Thank you, Marcus. Marcus, what's your answer?"</div>
+                        <p>This helps both automated captions and students following along identify who is speaking.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="example-box-header">Repeating Student Questions:</div>
+                        <p>Always repeat or paraphrase questions with the student's name:</p>
+                        <div class="quote">"Thanks Sarah, you're asking about the deadline for the midterm project..."</div>
+                        <p>This ensures both the question AND the speaker are captured in captions.</p>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="example-box-header">Why This Matters:</div>
+                        <p>A hearing student can see who's raising their hand. A deaf or hard-of-hearing student using captions needs the same information. Without speaker identification, captions don't provide <strong>equivalent access</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Make It a Habit</h3>
+                    <p>Add caption activation to your class startup routine.</p>
+                    <div class="step-actions">
+                        <ol>
+                            <li>Create a "Class Startup Checklist" (physical or digital)</li>
+                            <li>Include "Enable Live Transcript" as a mandatory item</li>
+                            <li>Consider adding a reminder slide to your presentation</li>
+                            <li>Record occasionally to review caption quality</li>
+                        </ol>
+                    </div>
+                    <div class="alert alert-warning" style="margin-top: 1rem;">
+                        <span class="alert-icon">!</span>
+                        <div><strong>Starting Spring 2026, courses without captions are out of compliance.</strong> Make it a habit now!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices Section -->
+        <section id="best-practices">
+            <div class="section-header">
+                <h2>Best Practices for Caption Quality</h2>
+                <p class="section-description">Simple techniques to improve caption accuracy and readability.</p>
+            </div>
+
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>Speaking Techniques</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>Speak clearly and at a moderate pace</li>
+                            <li>Pause briefly between speakers</li>
+                            <li>Avoid talking over others</li>
+                            <li>Minimize background noise</li>
+                            <li>Use a quality microphone when possible</li>
+                            <li>Position microphone 6-12 inches from mouth</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>Discussion Management</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>Structure discussions: "I'm calling on Ahmed, then Lisa, then Carlos"</li>
+                            <li>Use students' names when calling on them</li>
+                            <li>Repeat questions with attribution</li>
+                            <li>Summarize key points periodically</li>
+                            <li>Manage overlapping speech</li>
+                            <li>Use name tents or seating charts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>Hybrid/HyFlex Classrooms</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>Have in-person students also join Zoom individually</li>
+                            <li>Students can join muted with camera optional</li>
+                            <li>When speaking, student unmutes personal device</li>
+                            <li>Captions show student's name automatically</li>
+                            <li>Use headphones to prevent audio feedback</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <span>When Tech Solutions Aren't Available</span>
+                    </div>
+                    <div class="practice-body">
+                        <ul>
+                            <li>Always repeat student questions with names</li>
+                            <li>Example: "Excellent question from Alex about cellular division..."</li>
+                            <li>Summarize discussions: "Building on Jamie's point..."</li>
+                            <li>Self-identify: "This is Dr. Smith speaking..."</li>
+                            <li>Document your compliance efforts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem;">
+                <h3 style="color: var(--coc-blue); margin-bottom: 1rem;">Sample Meeting Opening Script</h3>
+                <div style="background: var(--bg-light); border-radius: 8px; padding: 1.25rem; font-style: italic; color: var(--text-medium);">
+                    "Good morning/afternoon, everyone. Before we begin, I want to remind you that live captions are available for this class. You can enable them by clicking the CC or Show Captions button in your Zoom toolbar. To help ensure accurate speaker identification in the captions, please state your name before speaking, especially during discussions."
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-description">Common questions about the new captioning requirements.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Do I need captions if I just share my screen and lecture?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>Yes.</strong> Any live audio content requires captions. This includes screen-sharing lectures, presentations, and any other format where you're speaking live to students online.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What about labs or in-person classes?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Only online/hybrid courses with synchronous (live) components are affected by the April 2026 deadline. In-person-only classes are not included at this time. However, if your in-person class has any live streaming or remote participants, captions are required for those sessions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What if no students request accommodations?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>This is a major change from previous policy.</strong> The new requirement is proactive, not reactive. You must provide captions for all live instruction, regardless of whether any student has requested accommodations. The captions must simply be available - students choose whether to enable them on their end.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Are Zoom's automated captions accurate enough?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Zoom auto-captions meet the "live captions" requirement for most lecture-based courses. However, speaker identification in multi-speaker discussions may require best practices (verbally identifying each speaker) or professional services. For Spring 2026, COC will provide enhanced captioning services funded through the California DECT Grant for courses that need them.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How do I handle student questions in large classes?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Always repeat student questions using the student's name: "Thanks Maria for that question about photosynthesis..." This ensures both the question and the speaker are captured in captions. This is good pedagogy anyway, as it helps all students hear the question clearly.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">If I teach asynchronous only, do I need live captions?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Pre-recorded videos have required captions for years (nothing new there). The April 2026 change specifically addresses live instruction. If you don't teach live sessions, you're not affected by this new deadline. However, all your pre-recorded videos should already be captioned.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What if I forget to turn on captions?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Starting Spring 2026, courses without captions are out of compliance. Make it a habit by adding "Enable Live Transcript" to your class startup checklist. Consider setting a reminder on your phone or adding a note to your lecture slides.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Will the college provide any additional support?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>Yes!</strong> For Spring 2026, College of the Canyons will provide:
+                            <ul style="margin-top: 0.75rem; margin-left: 1.25rem;">
+                                <li>Funding through the California DECT Grant for enhanced captioning services</li>
+                                <li>State funding specifically for captioning services</li>
+                                <li>Minimizes or eliminates cost to departments</li>
+                                <li>Covers both live captioning and post-production editing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checklist Section -->
+        <section id="checklist">
+            <div class="section-header">
+                <h2>Your Action Checklist</h2>
+                <p class="section-description">Complete these steps to ensure your courses are compliant.</p>
+            </div>
+
+            <div class="checklist">
+                <h3>This Week's To-Do List</h3>
+                <div class="checklist-items">
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Turn on captions in your next live Zoom class</label>
+                    </div>
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Update your Zoom display name to include your role (e.g., "Dr. Smith - Instructor")</label>
+                    </div>
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Start using student names when calling on them</label>
+                    </div>
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Practice repeating questions with student attribution</label>
+                    </div>
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Add "Enable Live Transcript" to your class startup routine</label>
+                    </div>
+                    <div class="checklist-item" onclick="this.classList.toggle('checked'); this.querySelector('input').checked = !this.querySelector('input').checked;">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">Record a session and review the caption quality</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success" style="margin-top: 2rem;">
+                <span class="alert-icon">TIP</span>
+                <div>
+                    <strong>Start Now, Not Later</strong>
+                    <p>Don't wait until April 2026 to build these habits. Starting now gives you time to get comfortable with the workflow and identify any issues before the compliance deadline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline">
+            <div class="section-header">
+                <h2>Compliance Timeline</h2>
+                <p class="section-description">Key dates and milestones for the captioning requirements.</p>
+            </div>
+
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">April 2024</div>
+                        <div class="timeline-content">U.S. Department of Justice issues final rule adopting WCAG 2.1 Level AA standards for Title II compliance</div>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-date">Now - Spring 2026</div>
+                        <div class="timeline-content"><strong>Preparation Period:</strong> Begin implementing captioning practices, attend training, test equipment</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Spring 2026</div>
+                        <div class="timeline-content">Enhanced captioning services available through California DECT Grant funding</div>
+                    </div>
+                    <div class="timeline-item future">
+                        <div class="timeline-date">April 24, 2026</div>
+                        <div class="timeline-content"><strong>COMPLIANCE DEADLINE:</strong> All synchronous online content must have live captions with speaker identification</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <div class="section-header">
+                <h2>Get Help & Resources</h2>
+                <p class="section-description">Contact information and additional resources for support.</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">?</div>
+                    <h4>Accessibility Questions</h4>
+                    <p>Scott McAfee<br>Access Coordinator</p>
+                    <a href="mailto:scott.mcafee@canyons.edu">scott.mcafee@canyons.edu</a>
+                    <p style="margin-top: 0.5rem;">(818) 362-3356</p>
+                    <p style="font-size: 0.8rem; color: var(--text-light);">Mon-Thu, 8:00 AM - 5:00 PM</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">Z</div>
+                    <h4>Zoom Support</h4>
+                    <p>Technical assistance with Zoom settings and features</p>
+                    <a href="#">IT Helpdesk</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">ID</div>
+                    <h4>Instructional Design</h4>
+                    <p>Best practices and course design support</p>
+                    <a href="mailto:online@canyons.edu">online@canyons.edu</a>
+                    <p style="margin-top: 0.5rem;">661-362-3600</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">$</div>
+                    <h4>DECT Grant Information</h4>
+                    <p>Enhanced captioning services and funding</p>
+                    <a href="#">Learn about the grant</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>College of the Canyons</h4>
+                <p>Online Education Department</p>
+                <p>26455 Rockwell Canyon Road</p>
+                <p>Santa Clarita, CA 91355</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#overview">Overview</a>
+                <a href="#how-to">How to Enable Captions</a>
+                <a href="#best-practices">Best Practices</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h4>Need Help?</h4>
+                <a href="mailto:online@canyons.edu">online@canyons.edu</a>
+                <a href="tel:661-362-3600">661-362-3600</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Prepared by Online Education | Last Updated: January 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+                // Toggle current item
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Checklist persistence
+        const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+
+        // Load saved state
+        checkboxes.forEach((checkbox, index) => {
+            const saved = localStorage.getItem(`caption-checklist-${index}`);
+            if (saved === 'true') {
+                checkbox.checked = true;
+                checkbox.closest('.checklist-item').classList.add('checked');
+            }
+        });
+
+        // Save state on change
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(`caption-checklist-${index}`, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+</html>
